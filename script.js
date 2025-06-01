@@ -127,10 +127,25 @@ function handleConversion() {
       // Convert the integer to a Roman numeral.
       const roman = integerToRoman(num);
       resultDiv.textContent = `Roman Numeral: ${roman}`;
+
+      // Evento personalizado: conversión a romano
+      gtag('event', 'convert_to_roman', {
+        'event_category': 'Conversion',
+        'event_label': 'DecimalToRoman',
+        'value': 1
+      });
+
     } else if (mode === 'romanToInt') {
       // Convert the Roman numeral to an integer.
       const num = romanToInteger(input);
       resultDiv.textContent = `Integer: ${num}`;
+
+      // Evento personalizado: conversión a decimal
+      gtag('event', 'convert_to_decimal', {
+        'event_category': 'Conversion',
+        'event_label': 'RomanToDecimal',
+        'value': 1
+      });
     }
   } catch (error) {
     // Display any error messages encountered during conversion.
@@ -140,4 +155,3 @@ function handleConversion() {
 
 // Attach an event listener to the convert button to trigger the conversion when clicked.
 document.getElementById('convertButton').addEventListener('click', handleConversion);
-
