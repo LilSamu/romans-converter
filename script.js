@@ -1,3 +1,5 @@
+window.addEventListener('DOMContentLoaded', () => {
+
 /**
  * Converts an integer (between 1 and 3999) to its Roman numeral equivalent.
  *
@@ -155,3 +157,5 @@ function handleConversion() {
 
 // Attach an event listener to the convert button to trigger the conversion when clicked.
 document.getElementById('convertButton').addEventListener('click', handleConversion);
+
+}); // ← Aquí termina el bloque DOMContentLoaded
